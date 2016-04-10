@@ -1,0 +1,46 @@
+/*
+ * Author: Caleb A. Payton
+ * Simple program to take in two integers, perform the division algorithm, 
+ * and return the quotient and remainder.
+ */
+
+import java.util.Scanner;
+
+public class DivisionAlgorithm {
+
+	public static void DIV(int n, int m) {
+		
+		int q = 0;
+		int r = n;
+		
+		if(n>0){
+			while(r>m) {
+				r = r-m;
+				q = q+1;
+			}
+			System.out.print("Quotient = " + q + "\tRemainder = " + r);
+		}
+		else {
+			while(r<0) {
+				r = r+m;
+				q = q-1;
+			}
+			System.out.print("Quotient = " + q + "\tRemainder = " + r);
+		}
+	}
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		int n;
+		int m;
+		
+		System.out.print("Enter integer: ");
+		n = scan.nextInt();
+		System.out.print("Enter divisor: ");
+		m = scan.nextInt();
+
+		DIV(n,m);
+	}
+}
